@@ -1,0 +1,98 @@
+#Create VNC service & set password(ds1234)
+----------------------------------------------------------------------------------------------------------
+[specs@localhost ~]$ vncserver:1
+bash: vncserver:1: command not found...
+[specs@localhost ~]$ vncserver :1
+A VNC server is already running as :1
+
+You will require a password to access your desktops.
+
+Password:
+Verify:
+Would you like to enter a view-only password (y/n)? y
+Password:
+Verify:
+
+New 'localhost.localdomain:2 (specs)' desktop is localhost.localdomain:2
+
+Creating default startup script /home/specs/.vnc/xstartup
+Creating default config /home/specs/.vnc/config
+Starting applications specified in /home/specs/.vnc/xstartup
+Log file is /home/specs/.vnc/localhost.localdomain:2.log
+
+[specs@localhost ~]$ 
+----------------------------------------------------------------------------------------------------------
+#Edited user .bash_profile
+----------------------------------------------------------------------------------------------------------
+[specs@localhost measure]$ cd /home/specs(user)/
+[specs@localhost ~]$ ll -a
+total 164
+drwx------. 22 specs users  4096 Apr  6 14:26 .
+drwxr-xr-x.  6 root  root   4096 Dec 13 23:35 ..
+-rw-------   1 specs users  1868 Apr  6 14:11 .ICEauthority
+-rw-------   1 specs users  9137 Apr  6 15:53 .bash_history
+-rw-r--r--.  1 specs users    18 Aug 30  2019 .bash_logout
+-rw-r--r--   1 specs users   236 Apr  6 14:08 .bash_profile
+-rw-r--r--   1 root  root    141 Apr  6 14:00 .bash_profile_bk230406
+-rw-r--r--.  1 specs users   433 Mar 13 02:20 .bashrc
+drwxr-xr-x  14 specs users  4096 Mar 30 03:32 .cache
+drwx------  14 specs users  4096 Mar 21 04:44 .config
+drwx------   3 specs users  4096 Apr  6 14:02 .dbus
+drwx------   2 specs users  4096 Mar 13 02:20 .ddd
+drwxrwxrwx   3 specs users  4096 Mar 21 23:40 .eclipse
+-rw-r--r--.  1 specs users   334 Sep 10  2018 .emacs
+-rw-------   1 specs users    16 Mar  8 03:13 .esd_auth
+-rw-r--r--   1 specs users    30 Mar 13 02:20 .gdbinit
+-r-xr-xr-x.  1 specs users   815 Dec 13 23:35 .gtkrc-2.0
+-rw-r--r--.  1 specs users   172 Oct 16  2018 .kshrc
+drwxr-xr-x   3 specs users  4096 Mar  8 03:13 .local
+drwxr-xr-x.  6 specs users  4096 Mar 23 03:06 .mozilla
+drwxr-xr-x   2 specs users  4096 Mar 21 02:03 .oracle_jre_usage
+drwxr-----   3 specs users  4096 Mar  8 03:14 .pki
+drwxr-xr-x   2 specs users  4096 Mar 13 02:20 .specspref
+drwxrwxrwx   2 specs users  4096 Mar 21 23:40 .swt
+-rw-------   1 specs users 12211 Apr  6 14:26 .viminfo
+drwxr-xr-x   2 specs users  4096 Apr  6 14:02 .vnc
+-rw-r--r--.  1 specs users   658 Dec 17  2018 .zshrc
+drwxr-xr-x   4 specs users  4096 Apr  6 14:10 Desktop
+drwxr-xr-x   2 specs users  4096 Mar  8 03:14 Documents
+drwxr-xr-x   2 specs users  4096 Mar  8 03:14 Downloads
+drwxr-xr-x   2 specs users  4096 Mar  8 03:14 Music
+drwxr-xr-x   2 specs users 12288 Apr  6 16:01 Pictures
+drwxr-xr-x   2 specs users  4096 Mar  8 03:14 Public
+drwxr-xr-x   2 specs users  4096 Mar  8 03:14 Templates
+drwxr-xr-x   2 specs users  4096 Mar  8 03:14 Videos
+[specs@localhost ~]$ 
+----------------------------------------------------------------------------------------------------------
+#.bash_profile(original)
+----------------------------------------------------------------------------------------------------------
+# .bash_profile
+  
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+----------------------------------------------------------------------------------------------------------
+#.bash_profile(edited)
+----------------------------------------------------------------------------------------------------------
+# .bash_profile
+  
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+/usr/bin/x0vncserver -passwordfile=/home/specs/.vnc/passwd -alwaysshared=1 > /dev/null 2>&1 &
+
+# User specific environment and startup programs
+----------------------------------------------------------------------------------------------------------
+#log out & log in
+
+
+
+
+
+
+
